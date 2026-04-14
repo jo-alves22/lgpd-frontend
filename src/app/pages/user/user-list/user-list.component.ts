@@ -25,8 +25,8 @@ export class UserListComponent implements OnInit {
 
   async listUsers(): Promise<void>{
     this.users = await this.userService.get<any[]>({
-      //url: "http://localhost:8080/api/users",
-      url: "https://1846-187-56-25-28.ngrok.io/api/users",
+      url: "http://localhost:8080/api/users",
+      //url: "https://1846-187-56-25-28.ngrok.io/api/users",
       params: {
       }
     });
@@ -40,8 +40,8 @@ export class UserListComponent implements OnInit {
   async delete(id: number): Promise<void> {
     if (confirm("Deseja deletar este usuário?")) {
       await this.userService.delete<any>({
-        //url: `http://localhost:8080/api/users/${id}`,
-        url: `https://1846-187-56-25-28.ngrok.io/api/users/${id}`,
+        url: `http://localhost:8080/api/users/${id}`,
+        //url: `https://1846-187-56-25-28.ngrok.io/api/users/${id}`,
         params: {}
       });
       await this.listUsers();

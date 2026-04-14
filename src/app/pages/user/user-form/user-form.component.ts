@@ -73,8 +73,8 @@ export class UserFormComponent {
     this.route.queryParams.subscribe(async (params: any) => {
       if (params.id !== undefined && params.id !== null) {
         this.user = await this.userService.get<any>({
-          //url: `http://localhost:8080/api/users/${params.id}`,
-          url: `https://1846-187-56-25-28.ngrok.io/api/users/${params.id}`,
+          url: `http://localhost:8080/api/users/${params.id}`,
+          //url: `https://1846-187-56-25-28.ngrok.io/api/users/${params.id}`,
           params: {
           }
         });
@@ -89,8 +89,8 @@ export class UserFormComponent {
     if (this.form.valid) {
       if (this.model?.id !== undefined && this.model?.id !== null) {
         this.user = await this.userService.put<any>({
-          //url: `http://localhost:8080/api/users/${this.model?.id}`,
-          url: `https://1846-187-56-25-28.ngrok.io/api/users/${this.model?.id}`,
+          url: `http://localhost:8080/api/users/${this.model?.id}`,
+          //url: `https://1846-187-56-25-28.ngrok.io/api/users/${this.model?.id}`,
           params: {
           },
           data: this.model
@@ -98,8 +98,8 @@ export class UserFormComponent {
       } else {
         delete this.model?.id;
         await this.userService.post<any>({
-          //url: `http://localhost:8080/api/users`,
-          url: `https://1846-187-56-25-28.ngrok.io/api/users`,
+          url: `http://localhost:8080/api/users`,
+          //url: `https://1846-187-56-25-28.ngrok.io/api/users`,
           params: {
           },
           data: this.model
